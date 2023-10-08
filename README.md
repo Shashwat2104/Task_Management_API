@@ -1,6 +1,11 @@
-# Task Management API
+#  <h1 align="center">Task Management API Backend</h1>
 
+# Overview  [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 Task Management API is a RESTful API for managing tasks. Users can create, retrieve, update, and delete tasks, with optional features like authentication and rate limiting.
+
+## Backend Deploy
+https://nice-pajamas-jay.cyclic.app/
+
 
 ## Table of Contents
 - [Getting Started](#getting-started)
@@ -24,9 +29,12 @@ Before you begin, ensure you have the following requirements:
 ### Installation
 
 1. Clone this repository:
+      ```
+  https://github.com/Shashwat2104/Task_Management_API
+   ```
 
 - git clone <br/>
-- cd task-management-api
+- cd Task_Management_API
 
 2. Install dependencies:
 - npm install
