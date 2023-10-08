@@ -29,9 +29,9 @@ Before you begin, ensure you have the following requirements:
 ### Installation
 
 1. Clone this repository:
-      ```
+```
   https://github.com/Shashwat2104/Task_Management_API
-   ```
+```
 
 2. Navigate to the project directory:
    ```
@@ -40,6 +40,7 @@ Before you begin, ensure you have the following requirements:
 
 
 3. Create a `.env` file with the following variables:
+
 - `mongourl`: Your MongoDB Atlas URL
 - `port`: Port for the API (e.g., 8080)
 - `secrete`: Your secret key for authentication (provide a value)
