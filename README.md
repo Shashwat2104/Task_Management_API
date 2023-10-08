@@ -33,11 +33,11 @@ Before you begin, ensure you have the following requirements:
   https://github.com/Shashwat2104/Task_Management_API
    ```
 
-- git clone <br/>
-- cd Task_Management_API
+2. Navigate to the project directory:
+   ```
+   cd Task_Management_API
+   npm-i
 
-2. Install dependencies:
-- npm install
 
 3. Create a `.env` file with the following variables:
 - `mongourl`: Your MongoDB Atlas URL
