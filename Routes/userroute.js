@@ -4,7 +4,7 @@ const userroute = express.Router();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-// Use async/await for error handling consistency and readability
+// Register a new user
 userroute.post("/register", async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -26,12 +26,14 @@ userroute.post("/register", async (req, res) => {
     });
 
     await newUser.save();
-    res.status(200).send({ msg: "Registration successful" });
+    res.status(201).send({ msg: "Registration successful" });
   } catch (error) {
+    console.error("Error in user registration:", error);
     res.status(500).send({ msg: "Internal server error" });
   }
 });
 
+// Authenticate and log in a user
 userroute.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -51,7 +53,7 @@ userroute.post("/login", async (req, res) => {
     // Generate a JWT token
     const token = jwt.sign(
       { id: user._id, email: user.email },
-      process.env.secret, // Make sure "secrete" is spelled correctly
+      process.env.secret, // Make sure "secret" is spelled correctly
       { expiresIn: "6hr" }
     );
 
@@ -62,6 +64,7 @@ userroute.post("/login", async (req, res) => {
       userid: user._id,
     });
   } catch (error) {
+    console.error("Error in user login:", error);
     res.status(500).send({ msg: "Internal server error" });
   }
 });

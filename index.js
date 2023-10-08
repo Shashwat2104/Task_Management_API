@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const { connection } = require("./Config/db");
 const { userroute } = require("./Routes/userroute");
-const { taskroute } = require("./Routes/taskroute");
+const { taskRouter } = require("./Routes/taskRouter");
 const { logRequestSync } = require("./Middleware/logger");
 const rateLimit = require("express-rate-limit");
 require("dotenv").config();
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 
 app.use(logRequestSync);
 app.use("/user", userroute);
-app.use("/task", taskroute);
+app.use("/task", taskRouter);
 
 app.listen(process.env.port, async () => {
   try {
